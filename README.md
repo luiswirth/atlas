@@ -7,6 +7,10 @@ so it is written for me and not for a reader who needs the standard account.
 Notes live in `src/`, one file per concept, grouped by area.
 `src/bridges/` holds the notes whose subject is a dictionary between two areas.
 
+The notation and the page style come from
+[dottyp](https://github.com/luiswirth/dottyp),
+imported as `@local/dottyp` and found through `TYPST_PACKAGE_PATH`.
+
 Build a single document over everything:
 
 ```bash

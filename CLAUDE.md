@@ -22,7 +22,9 @@ Every note starts with the two lines
 followed by a single level-one heading carrying its title, and uses `==` and deeper inside.
 It therefore compiles alone and is also included by `main.typ`, which must list every note.
 
-`setup.typ` carries the page style and the macros that are general.
+`setup.typ` defines no notation.
+It selects dottyp, which is where the notation and the page style both come from,
+and a name missing from a note is added there rather than here.
 Macros specific to one note stay in that note.
 
 ## Conventions
