@@ -22,6 +22,8 @@
 #include "src/probability/stochastic-calculus.typ"
 #include "src/probability/continuity-equation.typ"
 #include "src/probability/gaussian-processes.typ"
+#include "src/probability/sampling.typ"
+#include "src/probability/sde-numerics.typ"
 #include "src/probability/diffusion-models.typ"
 
 #include "src/physics/analytical-mechanics.typ"
