@@ -39,6 +39,7 @@
 
 #include "src/numerics/galerkin.typ"
 #include "src/numerics/bem.typ"
+#include "src/numerics/quantum-many-body.typ"
 
 #include "src/bridges/dualities.typ"
 #include "src/bridges/integral-forms.typ"
