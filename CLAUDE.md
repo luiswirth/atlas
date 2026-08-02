@@ -1,6 +1,8 @@
 # atlas
 
-See the README for what this is and how to build it.
+A personal encyclopedia of the mathematics and physics I have understood.
+Each note records the framing that made a thing click and its connections to what I already know,
+so it is written for me and not for a reader who needs the standard account.
 It has a second reader: an agent consults a note to find how I frame a subject
 and what I already take for granted, so a note is also written to be arrived at cold.
 
@@ -26,6 +28,34 @@ It therefore compiles alone and is also included by `src/main.typ`, which must l
 It is the one file that imports dottyp, whose `notes` template this repo follows,
 and a name missing from a note is added to the library rather than here.
 Macros specific to one note stay in that note.
+
+## Build
+
+The notation, the page style and the shape of this repo all come from
+[dottyp](https://github.com/luiswirth/dottyp).
+The library is vendored as a submodule at `lib/dottyp` and imported as `@local/dottyp`,
+so a fresh clone builds without anything installed around it:
+
+```bash
+git clone --recurse-submodules git@github.com:luiswirth/atlas.git
+```
+
+The submodule is pinned to a commit, so picking up a change to the library
+is `git -C lib/dottyp pull` and a commit here.
+
+Build a single document over everything into `out/`:
+
+```bash
+./build.sh
+```
+
+Every note also compiles on its own,
+given the same package root the scripts export:
+
+```bash
+export TYPST_PACKAGE_PATH=$PWD/lib/dottyp/pkg
+typst compile --root . src/probability/stochastic-calculus.typ
+```
 
 ## Conventions
 
