@@ -171,12 +171,18 @@ The unknown surface current $psi in cal(X)_1$ is discretized using *Rao–Wilton
 
 The discrete commutative diagram mirrors the continuous one, preserving the FEEC structure.
 
+=== Isogeometric variant
+
+The triangulation can be replaced by NURBS patches, exact for quadrics; an ellipsoid is the affine image of a sphere, so its control points scale and its weights stay unchanged. The same NURBS basis then carries both the geometry and the field, giving a $div_Gamma$-conforming Raviart–Thomas-type analogue of RWG.
+
 === Galerkin formulation
 
 Find $psi_N$ in the discrete RWG space such that
 $ chevron.l beta^k\, bold(V) psi_N chevron.r_Gamma = chevron.l beta^k\, frak(g) chevron.r_Gamma quad forall k. $
 
 Yields a complex symmetric (not Hermitian) linear system. Use *GMRES*, not CG. Convergence rate $O(h^(3\/2))$ in the $cal(X)_1$ norm for smooth solutions.
+
+The matrix is dense, $O(N^2)$, and is replaced in practice by an $H_2$-matrix, a hierarchical approximation of $O(N log N)$. Restarted GMRES without a preconditioner carries moderate problem sizes; serious refinement needs Calderón preconditioning.
 
 == Comparison with Scalar Laplace BEM
 
@@ -196,15 +202,6 @@ Maxwell BEM is the form-degree-1 analogue of scalar (form-degree-0) Laplace BEM.
 )
 
 Maxwell BEM contains a scalar Laplace BEM piece (the scalar potential / charge contribution embedded in $bold(Psi)_"SL"^M$), plus a transverse vector-potential piece with no scalar analogue. The relationship is "one rung up the de Rham ladder" — exterior differentiation $dif$ taking 0-forms to 1-forms.
-
-== Implementation Notes (Bembel-specific)
-
-- Geometry: NURBS patches, exact for quadrics. Ellipsoid is affine image of sphere; control points scale, weights unchanged.
-- Isogeometric ansatz space: same NURBS basis used for geometry and field, $div_Gamma$-conforming RT-type analogue of RWG.
-- $H_2$-matrix compression: $O(N^2)$ dense matrix replaced by $O(N log N)$ hierarchical approximation.
-- Solver: GMRES with restart, no preconditioner adequate for moderate problem sizes; Calderón preconditioning needed for serious refinement.
-- Sign convention: verify Bembel kernel exponent ($e^(plus.minus i k r)$) against intended convention.
-- Resonance check: condition number of $bold(V)$ for the chosen $k$ on the cavity geometry.
 
 == The One-Sentence Summary
 
