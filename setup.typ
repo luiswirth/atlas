@@ -8,6 +8,8 @@
 
 #let ip(a, b) = $chevron.l #a, #b chevron.r$
 #let transp = math.tack.b
+#let hodge = math.star
+#let amat(a) = math.upright(math.bold(a))
 
 #let avec(a) = math.bold(a)
 #let grad = avec(math.op("grad"))

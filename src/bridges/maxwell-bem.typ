@@ -108,6 +108,8 @@ $cal(X)_0$ and $cal(X)_1$ are dual under the $L^2$ pairing, the Maxwell analogue
 
 The map $J_n : bold(u) -> bold(n) times bold(u)$ is a single linear operator that simultaneously kills the normal component and rotates the tangential part by $90 degree$. Eigenvalues ${0, +i, -i}$ confirm this: zero on the rotation axis, complex pair on the perpendicular plane.
 
+Writing $Pi_t bold(u) = bold(n) times (bold(u) times bold(n))$ for the tangential projection, the rotation satisfies $J_n^2 = -Pi_t$, so it equips the tangential fields with a complex structure: a quarter turn in the tangent plane, squared, is minus the identity there.
+
 Sandwich identity: $bold(n) times (bold(u) times bold(n)) = bold(u) - (bold(n) dot bold(u)) bold(n)$. Two cross products with opposite handedness cancel rotations but both kill the normal, yielding pure tangential projection. BAC-CAB is the formula behind this.
 
 The cross product itself is "wedge then Hodge": $bold(a) times bold(b) = star(bold(a) and bold(b))$. It encodes the oriented parallelogram area as a perpendicular vector, a coincidence that only works in 3D, where bivectors and vectors have the same dimension.
@@ -183,6 +185,34 @@ $ chevron.l beta^k\, bold(V) psi_N chevron.r_Gamma = chevron.l beta^k\, frak(g) 
 Yields a complex symmetric (not Hermitian) linear system. Use *GMRES*, not CG. Convergence rate $O(h^(3\/2))$ in the $cal(X)_1$ norm for smooth solutions.
 
 The matrix is dense, $O(N^2)$, and is replaced in practice by an $H_2$-matrix, a hierarchical approximation of $O(N log N)$. Restarted GMRES without a preconditioner carries moderate problem sizes; serious refinement needs Calderón preconditioning.
+
+== The Reaction Field Problem
+
+The concrete problem that the whole machinery gets pointed at.
+
+The free-space response to a point source is the fundamental solution of the Helmholtz operator,
+$
+  Phi(bold(x), bold(z)) = 1/(4 pi) exp(i k norm(bold(x) - bold(z)))/norm(bold(x) - bold(z)),
+$
+satisfying $(-Delta - k^2) Phi(dot, bold(z)) = delta_bold(z)$ with the outgoing condition at infinity. The field radiated by a point dipole at $bold(z)$ with polarization $bold(p)$ follows by applying the dyadic curl-curl operator,
+$
+  bold(E)^i (bold(x); bold(z), bold(p)) = i/k curl_bold(x) curl_bold(x) (Phi(bold(x), bold(z)) bold(p)),
+$
+which solves the time-harmonic curl-curl equation away from the source. The boundary-adapted Green's function of a cavity, which would itself satisfy the conducting-wall condition, is a distinct object one never needs to form.
+
+Let $D subset.eq RR^3$ be a bounded cavity with perfectly electrically conducting boundary $partial D$, and $Lambda subset.eq D$ an interior surface carrying the sources and the measurements. A dipole at $bold(z) in Lambda$ radiates the incident field above, whose tangential trace on the wall induces the boundary forcing
+$
+  bold(h) = -bold(n)_(partial D) times bold(E)^i quad "on" partial D.
+$
+The scattered field is the response restoring the conducting-wall condition,
+$
+  curl curl bold(E)^s - k^2 bold(E)^s = 0 "in" D, quad quad bold(n)_(partial D) times bold(E)^s = bold(h) "on" partial D,
+$
+and the total field $bold(E) = bold(E)^i + bold(E)^s$ then has vanishing tangential trace on the wall. The measured data is the rotated tangential trace of the scattered field on $Lambda$,
+$
+  bold(y)(bold(x)) = bold(n)_Lambda (bold(x)) times bold(E)^s (bold(x)), quad bold(x) in Lambda,
+$
+and collecting these over all dipole excitations defines the reaction operator. Both the forcing and the measurement are rotated traces, which is why they are related through $J_n$.
 
 == Comparison with Scalar Laplace BEM
 
