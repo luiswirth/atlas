@@ -1,2 +1,4 @@
 ai-assisted: bem.typ
 ai-assisted: galerkin.typ
+ai-unchecked: fem.typ
+ai-unchecked: feec.typ
