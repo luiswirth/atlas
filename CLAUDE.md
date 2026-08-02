@@ -37,7 +37,7 @@ No completeness pressure. A note of three sentences is a finished note,
 and an area with one file in it is fine. Nothing here has to cover its subject.
 
 Not a diary. Notes are undated and revised forever.
-Dated personal material belongs in `~/zettelkasten`, which is separate on purpose.
+Dated personal material belongs elsewhere.
 
 Not course material. Anything bound to one lecture or one project stays with that project;
 only what generalizes beyond it is harvested into a note here.
