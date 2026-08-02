@@ -5,11 +5,14 @@
 
 #outline(depth: 2)
 
+#include "src/analysis/distributions.typ"
 #include "src/analysis/operator-theory.typ"
 #include "src/analysis/fourier.typ"
 #include "src/analysis/pde-zoo.typ"
 #include "src/analysis/potential-theory.typ"
 
+#include "src/probability/brownian-motion.typ"
+#include "src/probability/white-noise.typ"
 #include "src/probability/stochastic-calculus.typ"
 
 #include "src/physics/maxwell.typ"
