@@ -1,0 +1,7 @@
+- Laplace/Poisson Equation: Equilibrium / Elliptic, Potentials
+- Diffusion Equation: Heat, 1st time derivative
+- Wave Equation: 2nd time derivative
+- Helmoltz Equation: Steady-state Wave, Eigenvalue problem
+- Lame Equation: Elastostatics
+- Stokes Equation: Creeping incompressible flow
+- Navier Stokes: Fluid Dynamics
