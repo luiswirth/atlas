@@ -31,7 +31,7 @@ Magnetic field can exist without electric field (steady current in a neutral wir
 
 Radiation is energy carried to infinity. Operationally: nonzero Poynting flux through a sphere at infinity. Requires fields falling off as $1\/r$, with $bold(E)$ and $bold(B)$ in phase, perpendicular, equal magnitudes (in natural units).
 
-Static fields fall off as $1\/r^2$ or faster — no radiation. The time variation of sources is what enables the $1\/r$ tail.
+Static fields fall off as $1\/r^2$ or faster, so no radiation. The time variation of sources is what enables the $1\/r$ tail.
 
 === Multipoles and dipoles
 
@@ -39,14 +39,14 @@ Localized sources expand in multipoles:
 
 - *Electric monopole*: forbidden as a radiator (charge conservation).
 - *Electric dipole* $bold(p) = integral bold(r) rho dif V$: leading-order radiator. Equivalent to a point current element $bold(J) = bold(p) delta(x-z) e^(-i omega t)$.
-- *Magnetic dipole* $bold(m) = (1\/2) integral bold(r) times bold(J) dif V$: a current loop. Atomic unit of magnetism — cannot be decomposed further.
+- *Magnetic dipole* $bold(m) = (1\/2) integral bold(r) times bold(J) dif V$: a current loop. Atomic unit of magnetism, cannot be decomposed further.
 - Higher multipoles: corrections, suppressed by $(omega L \/ c)^2$ each step.
 
 Dipoles dominate radiation from sources small compared to wavelength. For probing a cavity electromagnetically, point dipoles are the elementary inputs.
 
 === The asymmetry between $bold(E)$ and $bold(B)$
 
-In source-free regions, Maxwell's equations are symmetric under $bold(E) <-> c bold(B)$ — this is *electromagnetic duality*. Only the existence of electric (but not magnetic) charges breaks the symmetry.
+In source-free regions, Maxwell's equations are symmetric under $bold(E) <-> c bold(B)$, which is *electromagnetic duality*. Only the existence of electric (but not magnetic) charges breaks the symmetry.
 
 Lorentz boosts mix $bold(E)$ and $bold(B)$: a pure $bold(E)$ field in one frame becomes a mixture of $bold(E)$ and $bold(B)$ in a boosted frame. The "magnetic force on a moving charge" in one frame is the "electric force on a stationary charge" in the charge's rest frame, made possible by length contraction creating an effective net charge density.
 
@@ -61,7 +61,7 @@ $ curl curl bold(E) - k^2 bold(E) = 0. $
 
 This is the natural PDE for the electric field 1-form. On divergence-free $bold(E)$, the operator $curl curl$ coincides with the Hodge–Laplacian $delta dif$. So the PDE is the Hodge–Helmholtz equation for 1-forms.
 
-Maxwell BEM is essentially always about this curl-curl equation — different formulations (EFIE, MFIE, CFIE, PMCHWT) are all derived from it.
+Maxwell BEM is essentially always about this curl-curl equation: different formulations (EFIE, MFIE, CFIE, PMCHWT) are all derived from it.
 
 === Helmholtz decomposition
 
@@ -102,15 +102,15 @@ The general rule: in $n$-dim, the number of de Rham sub-complexes is 1 if $n$ is
 
 The relation $bold(T)_tau = -bold(n) times bold(T)_D$ is the surface Hodge star $star_Gamma$ acting between the two trace spaces. The Neumann trace is $bold(T)_tau$ applied to $curl bold(u)$.
 
-$cal(X)_0$ and $cal(X)_1$ are dual under the $L^2$ pairing — the Maxwell analogue of $H^(plus.minus 1\/2)$ duality in scalar BEM.
+$cal(X)_0$ and $cal(X)_1$ are dual under the $L^2$ pairing, the Maxwell analogue of $H^(plus.minus 1\/2)$ duality in scalar BEM.
 
 === The cross product
 
 The map $J_n : bold(u) -> bold(n) times bold(u)$ is a single linear operator that simultaneously kills the normal component and rotates the tangential part by $90 degree$. Eigenvalues ${0, +i, -i}$ confirm this: zero on the rotation axis, complex pair on the perpendicular plane.
 
-Sandwich identity: $bold(n) times (bold(u) times bold(n)) = bold(u) - (bold(n) dot bold(u)) bold(n)$. Two cross products with opposite handedness cancel rotations but both kill the normal — yielding pure tangential projection. BAC-CAB is the formula behind this.
+Sandwich identity: $bold(n) times (bold(u) times bold(n)) = bold(u) - (bold(n) dot bold(u)) bold(n)$. Two cross products with opposite handedness cancel rotations but both kill the normal, yielding pure tangential projection. BAC-CAB is the formula behind this.
 
-The cross product itself is "wedge then Hodge": $bold(a) times bold(b) = star(bold(a) and bold(b))$. It encodes the oriented parallelogram area as a perpendicular vector — a coincidence that only works in 3D, where bivectors and vectors have the same dimension.
+The cross product itself is "wedge then Hodge": $bold(a) times bold(b) = star(bold(a) and bold(b))$. It encodes the oriented parallelogram area as a perpendicular vector, a coincidence that only works in 3D, where bivectors and vectors have the same dimension.
 
 == BEM for Maxwell
 
@@ -173,7 +173,7 @@ The discrete commutative diagram mirrors the continuous one, preserving the FEEC
 
 === Isogeometric variant
 
-The triangulation can be replaced by NURBS patches, exact for quadrics; an ellipsoid is the affine image of a sphere, so its control points scale and its weights stay unchanged. The same NURBS basis then carries both the geometry and the field, giving a $div_Gamma$-conforming Raviart–Thomas-type analogue of RWG.
+The triangulation can be replaced by NURBS patches, exact for quadrics, and an ellipsoid is the affine image of a sphere, so its control points scale and its weights stay unchanged. The same NURBS basis then carries both the geometry and the field, giving a $div_Gamma$-conforming Raviart–Thomas-type analogue of RWG.
 
 === Galerkin formulation
 
@@ -201,8 +201,8 @@ Maxwell BEM is the form-degree-1 analogue of scalar (form-degree-0) Laplace BEM.
   [Discrete space], [Nodal $P_1$], [RWG],
 )
 
-Maxwell BEM contains a scalar Laplace BEM piece (the scalar potential / charge contribution embedded in $bold(Psi)_"SL"^M$), plus a transverse vector-potential piece with no scalar analogue. The relationship is "one rung up the de Rham ladder" — exterior differentiation $dif$ taking 0-forms to 1-forms.
+Maxwell BEM contains a scalar Laplace BEM piece (the scalar potential / charge contribution embedded in $bold(Psi)_"SL"^M$), plus a transverse vector-potential piece with no scalar analogue. The relationship is "one rung up the de Rham ladder", exterior differentiation $dif$ taking 0-forms to 1-forms.
 
-== The One-Sentence Summary
+== Summary
 
-Maxwell BEM is the systematic discretization of the boundary integral equations derived from the curl-curl equation, formulated on the two surface de Rham complexes that emerge from the $H(curl)$ trace structure, with surface currents as the natural unknowns and dipoles as the elementary radiators — a direct vectorial generalization of scalar Laplace BEM, sitting one rung up the de Rham ladder.
+Maxwell BEM is the systematic discretization of the boundary integral equations derived from the curl-curl equation, formulated on the two surface de Rham complexes that emerge from the $H(curl)$ trace structure, with surface currents as the natural unknowns and dipoles as the elementary radiators, a direct vectorial generalization of scalar Laplace BEM, sitting one rung up the de Rham ladder.
