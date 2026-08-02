@@ -1,6 +1,8 @@
 # atlas
 
 See the README for what this is and how to build it.
+It has a second reader: an agent consults a note to find how I frame a subject
+and what I already take for granted, so a note is also written to be arrived at cold.
 
 ## Structure
 
