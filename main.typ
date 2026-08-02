@@ -16,10 +16,13 @@
 #include "src/geometry/manifolds.typ"
 #include "src/geometry/exterior-algebra.typ"
 
+#include "src/probability/probability-as-geometry.typ"
 #include "src/probability/brownian-motion.typ"
 #include "src/probability/white-noise.typ"
 #include "src/probability/stochastic-calculus.typ"
+#include "src/probability/continuity-equation.typ"
 #include "src/probability/gaussian-processes.typ"
+#include "src/probability/diffusion-models.typ"
 
 #include "src/physics/analytical-mechanics.typ"
 #include "src/physics/thermodynamics.typ"

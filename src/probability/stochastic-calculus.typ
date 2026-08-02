@@ -15,6 +15,21 @@ This powers numerical PDE methods like Walk-on-Spheres.
 
 The Ito integral is defined at the left-endpoint of the rectangle, this makes it a martingale.
 
+== Ito against Stratonovich
+
+Ito evaluates the Riemann sum at the left endpoint and Stratonovich at the midpoint.
+The left endpoint buys the martingale property, the midpoint buys the ordinary chain rule,
+and one cannot have both.
+Ito is therefore the computational convention,
+since generators, Girsanov, Feynman-Kac and the Ito isometry
+all rest on the martingale structure,
+while Stratonovich is the geometric one
+and is how diffusions on manifolds are defined.
+By Wong-Zakai, white noise arising as the limit of a fast smooth process
+gives the Stratonovich solution,
+so physical noise is Stratonovich and information arrival is Ito.
+Working rule: write the model in Stratonovich, analyze in Ito.
+
 Ito isometry gives
 $
   EE[integral_0^t sigma_s dif B_s] = 0
