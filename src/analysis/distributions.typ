@@ -50,6 +50,31 @@ so the entire gap between the two consists of objects that fail to be nonnegativ
 That is why probability never leaves the measure world,
 while white noise, whose covariance is $delta$ and which carries a derivative, does.
 
+== Representing a functional
+
+Both Riesz representation theorems answer the same question,
+namely what a continuous linear functional looks like.
+On a Hilbert space every such $L: H -> RR$ is an inner product against a unique $v in H$,
+so $H$ is its own dual.
+On $C(X)$ for compact Hausdorff $X$, every positive linear functional
+is integration against a unique Borel measure,
+$
+  L(f) = integral_X f dif mu.
+$
+
+The measure version gives existence without a reference measure,
+and the Hilbert version is what it becomes once a reference measure is chosen.
+If $nu << mu$, meaning every $mu$-null set is $nu$-null,
+Radon--Nikodym produces a density $p >= 0$ with $nu(A) = integral_A p dif mu$,
+written $p = (dif nu) \/ (dif mu)$,
+and the functional turns into
+$
+  L(f) = integral f p dif mu = ip(f, p)_(L^2(mu)).
+$
+The Radon--Nikodym derivative is exactly the Hilbert space representer,
+and every probability density is one, taken against Lebesgue measure.
+The measure version is the more intrinsic statement, the Hilbert version the more concrete.
+
 == The two senses of the word
 
 Schwartz distributions and probability distributions are different notions with a shared root,
