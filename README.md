@@ -7,14 +7,17 @@ so it is written for me and not for a reader who needs the standard account.
 Notes live in `src/`, one file per concept, grouped by area.
 `src/bridges/` holds the notes whose subject is a dictionary between two areas.
 
-The notation and the page style come from
+The notation, the page style and the shape of this repo all come from
 [dottyp](https://github.com/luiswirth/dottyp),
-imported as `@local/dottyp` and found through `TYPST_PACKAGE_PATH`.
+whose `notes` template this follows.
+The library is imported as `@local/dottyp` and found through `TYPST_PACKAGE_PATH`,
+which must point at `dottyp/pkg` for any build here.
+`src/setup.typ` is the one file that imports it.
 
-Build a single document over everything:
+Build a single document over everything into `out/`:
 
 ```bash
-typst compile main.typ
+./build.sh
 ```
 
 Every note also compiles on its own:

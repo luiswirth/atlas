@@ -15,16 +15,16 @@ so those are filed by what they connect rather than by whichever area they menti
 Every note starts with the two lines
 
 ```typst
-#import "/setup.typ": *
+#import "/src/setup.typ": *
 #show: note
 ```
 
 followed by a single level-one heading carrying its title, and uses `==` and deeper inside.
-It therefore compiles alone and is also included by `main.typ`, which must list every note.
+It therefore compiles alone and is also included by `src/main.typ`, which must list every note.
 
-`setup.typ` defines no notation.
-It selects dottyp, which is where the notation and the page style both come from,
-and a name missing from a note is added there rather than here.
+`src/setup.typ` defines no notation.
+It is the one file that imports dottyp, whose `notes` template this repo follows,
+and a name missing from a note is added to the library rather than here.
 Macros specific to one note stay in that note.
 
 ## Conventions

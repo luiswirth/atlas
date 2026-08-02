@@ -1,4 +1,4 @@
-#import "/setup.typ": *
+#import "/src/setup.typ": *
 #show: note
 
 = Integral Forms
