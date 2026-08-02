@@ -1,0 +1,7 @@
+ai-assisted: stochastic-calculus.typ
+ai-assisted: gaussian-processes.typ
+ai-assisted: continuity-equation.typ
+ai-assisted: diffusion-models.typ
+ai-assisted: probability-as-geometry.typ
+ai-assisted: sampling.typ
+ai-assisted: sde-numerics.typ
