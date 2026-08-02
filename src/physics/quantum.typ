@@ -1,9 +1,14 @@
-= Hamiltonian Mechanics
+#import "/setup.typ": *
+#show: note
+
+= Quantum Mechanics
+
+== Hamiltonian Mechanics
 
 Quantum Mechanics is all about Hamiltonian mechanics.
 We have position $r$ and momenum $k$.
 
-== Momentum Operator
+=== Momentum Operator
 
 Einstein showed that photons (quanta of light) carry momentum $p = E/c = h nu/c = h/lambda$.
 De Broglie postulated that particles (quanta of matter) behave as waves just like photons do.
@@ -29,7 +34,7 @@ $
 The $-i$ is forced to make the operator Hermitian, such that
 eigenvalues and therefore momenta are real, as they should be.
 
-=== Representation Theoretic View
+==== Representation Theoretic View
 
 The momentum oeprator is the infintesimal generator of spatial translations.
 Translations act on wave functions as
@@ -38,13 +43,13 @@ $
 $
 which makes $hat(p) = -i planck nabla$.
 
-== De Broglie Wavelength
+=== De Broglie Wavelength
 
 Material particles have an associated wave with this wavelength.
 
 Spatial wavelength of a plane wave $e^(i k x)$ is $lambda = 2 pi/k$.
 Because of $p = planck k$, we get $lambda = h/p$.
 
-== Density of States
+=== Density of States
 
 How many quantum states are avialable per unit energy at energy E?

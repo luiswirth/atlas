@@ -1,3 +1,6 @@
+#import "/setup.typ": *
+#show: note
+
 = Solid State Physics
 
 A crystal has a Bravais lattice
@@ -7,9 +10,9 @@ $
 
 The space we are working with then is a quotient
 $
-  RR^3\/Lambda isomorph TT^3
+  RR^3\/Lambda tilde.equiv TT^3
 $
-isomorphic to a 3-dimensional torus (periodic structure).
+tilde.equivic to a 3-dimensional torus (periodic structure).
 
 Periodic lattice leads to periodic poentential.
 $
@@ -25,9 +28,9 @@ with $G$ satisfiying $e^(i avec(G) dot avec(R)) = 1 <=> avec(G) dot avec(R) in 2
 
 All such $G$s form the *reciprocal lattice*
 $
-  Lambda^* = {avec(G) = m_1 avec(b)_1 + m_2 avec(b)_2 + m_3 avec(b)_3i, m_i in ZZ}
+  Lambda^* = {avec(G) = m_1 avec(b)_1 + m_2 avec(b)_2 + m_3 avec(b)_3, m_i in ZZ}
 $
-with the reciporcal basis vector fulfilling $avec(a)_i dot avec(b)_j = 2 pi delta_(i j)
+with the reciprocal basis vectors fulfilling $avec(a)_i dot avec(b)_j = 2 pi delta_(i j)$.
 
 The reciprocal lattice is the *Pontryagin dual* of the Bravais lattice.
 -- the set of characters (homomorphisms to U(1)) of the translation

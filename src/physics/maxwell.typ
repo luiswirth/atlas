@@ -1,3 +1,6 @@
+#import "/setup.typ": *
+#show: note
+
 = Electromagnetism Equations
 
 == Maxwell's Equations

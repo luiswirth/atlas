@@ -1,3 +1,8 @@
+#import "/setup.typ": *
+#show: note
+
+= Operator Theory
+
 Fredholm theory: About fredholm integral equations. Which are the inverse of a differential equation.
 
 Spectral theory diagonalizes operators. Writes complicated operators as sums of multiplicate operators.

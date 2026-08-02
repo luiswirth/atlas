@@ -1,3 +1,8 @@
+#import "/setup.typ": *
+#show: note
+
+= Stochastic Calculus
+
 Brownian Motion has infinite total variation (path length) but finite ($t$) quadratic variation.
 Deterministic functions have finite total variation and zero quadratic variation.
 
@@ -67,5 +72,3 @@ Kolmogorov backward equation: Test function evolution.
 Kolmogorov forward equation: Measure evolution. Adjoint of Markov operator. Fokker plank.
 
 Langevin diffusion.
-
-

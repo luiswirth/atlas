@@ -1,7 +1,5 @@
-#set text(font: "New Computer Modern Sans")
-#set page(margin: 1cm)
-
-#let ip(a, b) = $chevron.l #a, #b chevron.r$
+#import "/setup.typ": *
+#show: note
 
 = Fourier Transform and Translations
 

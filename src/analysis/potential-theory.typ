@@ -1,6 +1,11 @@
+#import "/setup.typ": *
+#show: note
+
+= Potential Theory
+
 Here some probabilistic potential theory.
 
-= Kakutani
+== Kakutani
 
 $
   u(x)=EE^x [g(B_tau)]
@@ -14,7 +19,7 @@ $
   u(x)=∫_(partial Omega)​f(ξ) dif PP^x(B_tau​in dif xi)
 $
 
-= Harmonic measure
+== Harmonic measure
 
 Similar to Green's function / fundamental solution but doesn't describe how
 source function generates solution, but how boundary values generate solution.
@@ -34,7 +39,7 @@ $
   u(x) = integral_(partial Omega) g(y) dif omega(x, Omega)(y)
 $
 
-= Poisson Kernel
+== Poisson Kernel
 
 
 The Poisson Kernel is an integral kernel and is the Radon–Nikodym derivative of
@@ -55,7 +60,7 @@ $
 $
 
 
-= Green's function
+== Green's function
 
 The Green's function has the probabilistic meaning:
 $G(x,y)$ is proportional to the
@@ -72,13 +77,13 @@ This makes the identity $P = −partial_n G$ feel inevitable. The
 The Poisson kernel is the Green's function differentiated down to the boundary,
 discarding all interior time and keeping only the final landing distribution.
 
-= Girsanov's theorem
+== Girsanov's theorem
 
 Importance sampling for stochastic path integrals.
 
 What's the measure change induced by changing the drift in a stochastic process.
 
-= Walk on Spheres
+== Walk on Spheres
 
 Efficient algorithm for solving Laplace using Monte Carlo
 of Browninan Motion hitting the boundary.
