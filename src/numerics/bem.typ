@@ -214,7 +214,7 @@ $
 Produces a function on the whole domain.
 
 Single Layer Potential
-(G not diff, u diff)
+(G not partial, u partial)
 $
   Psi^L_"SL": H^(-1/2) (Gamma) -> H^1 (Omega)
   \
@@ -226,7 +226,7 @@ Potential doesn't jump -> No Dirichlet Jump
 But Electric field points in opposite direction -> Neumann Jump
 
 Double Layer Potential
-(G diff, u not diff)
+(G partial, u not partial)
 $
   (Psi^L_"DL" u)(x)
   integral_Gamma u(y) partial_(n,y) G^L (x,y) dif S_y

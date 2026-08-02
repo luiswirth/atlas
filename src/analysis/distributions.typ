@@ -6,7 +6,7 @@
 == The mental model
 
 Both are measuring devices, and the roughness of the object is paid for by the smoothness of the probe.
-Neither is ever seen directly, only through its readings $ip(T, f)$ against test functions,
+Neither is ever seen directly, only through its readings $inner(T, f)$ against test functions,
 and there is a budget of regularity conserved across the pairing:
 concentrate the object further and the probe must be smoother to compensate.
 
@@ -23,7 +23,7 @@ while $delta'$ is a dipole, whose two opposite values cancel and leave the deriv
 Each derivative moved onto the object is one derivative moved onto the probe,
 which is what integration by parts says,
 $
-  ip(T', f) = -ip(T, f').
+  inner(T', f) = -inner(T, f').
 $
 That identity is the definition of the derivative of a distribution,
 not a limit but the demand that integration by parts keep holding.
@@ -40,7 +40,7 @@ Both extremes act on test functions by $f |-> integral f dif mu$,
 so the difference lies only in how much regularity the pairing demands.
 A measure needs $f$ continuous and bounded and is controlled by $norm(f)_infinity$ alone,
 whereas a general distribution needs derivatives of $f$ controlled as well.
-The smallest object that is not a measure is $delta'$, with $ip(delta', f) = -f'(0)$,
+The smallest object that is not a measure is $delta'$, with $inner(delta', f) = -f'(0)$,
 which sees the slope, and no distribution of mass can do that.
 
 Two characterizations sharpen the inclusion.
@@ -69,7 +69,7 @@ Radon--Nikodym produces a density $p >= 0$ with $nu(A) = integral_A p dif mu$,
 written $p = (dif nu) \/ (dif mu)$,
 and the functional turns into
 $
-  L(f) = integral f p dif mu = ip(f, p)_(L^2(mu)).
+  L(f) = integral f p dif mu = inner(f, p)_(L^2(mu)).
 $
 The Radon--Nikodym derivative is exactly the Hilbert space representer,
 and every probability density is one, taken against Lebesgue measure.

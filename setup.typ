@@ -1,3 +1,7 @@
+// The notation comes from dottyp; this file only selects it and sets the page.
+
+#import "@local/dottyp:0.1.0": *
+
 #let note(body) = {
   set page(paper: "a4", margin: 2cm)
   set text(font: "New Computer Modern Sans", size: 10pt, lang: "en")
@@ -5,14 +9,3 @@
   show link: set text(fill: blue)
   body
 }
-
-#let ip(a, b) = $chevron.l #a, #b chevron.r$
-#let transp = math.tack.b
-#let hodge = math.star
-#let amat(a) = math.upright(math.bold(a))
-
-#let avec(a) = math.bold(a)
-#let grad = avec(math.op("grad"))
-#let curl = avec(math.op("curl"))
-#let scurl = math.op("curl")
-#let div = math.op("div")

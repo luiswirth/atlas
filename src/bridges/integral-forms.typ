@@ -22,7 +22,7 @@ $
 where $S_k (Sigma)$ is the set of oriented compact piecewise-$C^1$ $k$-submanifolds of $Sigma$,
 continuity is with respect to a deformation topology,
 and additivity means the value on a disjoint union is the sum of the values.
-Evaluation is written as a pairing, $ip(omega, Gamma) := omega(Gamma)$,
+Evaluation is written as a pairing, $inner(omega, Gamma) := omega(Gamma)$,
 and the space is $I^ell (Sigma)$.
 
 The motivation is physical and it is the right one.
@@ -44,7 +44,7 @@ and only the integral one survives when the density does not exist.
 
 The exterior derivative on $I^ell$ is defined, not derived,
 $
-  ip(dif omega, Gamma) = ip(omega, partial Gamma).
+  inner(dif omega, Gamma) = inner(omega, partial Gamma).
 $
 Stokes' theorem is then the statement that this agrees with the pointwise $dif$
 under the identification of the previous section,

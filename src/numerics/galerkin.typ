@@ -22,5 +22,5 @@ $
 $
 the normal equation is $L^* L u = L^* f$,
 or, written with test functions and the adjoint,
-$ip(L u, L v) = ip(f, L v)$,
+$inner(L u, L v) = inner(f, L v)$,
 which is Galerkin with the test functions run through $L$.

@@ -30,10 +30,10 @@ Rather than naming values that do not exist and repairing them by integration af
 it names only the smeared quantities, which do exist:
 to each $f in L^2$ it assigns a centered Gaussian $W(f)$, thought of as $integral f(t) W_t dif t$, with
 $
-  EE[W(f) W(g)] = ip(f, g).
+  EE[W(f) W(g)] = inner(f, g).
 $
 This is the first definition with the $delta$ integral already performed,
-since $integral integral f(s) g(u) delta(s - u) dif s dif u = ip(f, g)$,
+since $integral integral f(s) g(u) delta(s - u) dif s dif u = inner(f, g)$,
 and no distribution appears anywhere in it.
 
 So white noise is an isometric embedding of $L^2$ of the index set into $L^2(Omega)$,
@@ -41,7 +41,7 @@ landing in the Gaussian subspace,
 which is the measure-as-metric picture of probability read in the other direction.
 Brownian motion is the image of the indicator family, $B_t = W(bb(1)_([0,t]))$,
 and its defining properties are properties of that family rather than of the noise.
-The covariance is $ip(bb(1)_([0,s]), bb(1)_([0,t])) = min(s,t)$,
+The covariance is $inner(bb(1)_([0,s]), bb(1)_([0,t])) = min(s,t)$,
 the variance is $norm(bb(1)_([0,t]))^2 = t$,
 and independence of increments over disjoint intervals is orthogonality of their indicators,
 which for jointly Gaussian variables is independence.

@@ -10,7 +10,7 @@ without anything above it inducing it.
 
 == Inner product
 
-$ip(x, y): X times X -> RR$, positive definite, symmetric and bilinear.
+$inner(x, y): X times X -> RR$, positive definite, symmetric and bilinear.
 
 == Norm
 
@@ -18,7 +18,7 @@ $norm(x): X -> RR^+_0$, positive definite, absolutely homogeneous
 and satisfying the triangle inequality.
 Induced by an inner product through
 $
-  norm(x) = sqrt(ip(x, x)).
+  norm(x) = sqrt(inner(x, x)).
 $
 
 == Metric

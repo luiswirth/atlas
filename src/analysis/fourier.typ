@@ -60,16 +60,16 @@ they are forced by the group law and unitarity.
 
 The unique family of continuous solutions is
 $
-  lambda(a) = chi_xi (a) = e^(i ip(xi, a)), quad xi in RR^n
+  lambda(a) = chi_xi (a) = e^(i inner(xi, a)), quad xi in RR^n
 $
 with corresponding eigenfunction
 $
-  phi_xi (x) = e^(i ip(xi, x)).
+  phi_xi (x) = e^(i inner(xi, x)).
 $
 Verification:
 $
   T_a phi_xi (x)
-  = e^(i ip(xi, x - a))
+  = e^(i inner(xi, x - a))
   = chi_xi (-a) phi_xi (x).
 $
 The parameter $xi$ labels the character and becomes the frequency variable.
@@ -91,24 +91,24 @@ The Fourier transform is the change of basis into this joint eigenbasis.
 
 Analysis --- project onto each eigenfunction:
 $
-  hat(f)(xi) = ip(f, phi_xi)_(L^2) = integral_(RR^n) f(x) overline(phi_xi (x)) dif x.
+  hat(f)(xi) = inner(f, phi_xi)_(L^2) = integral_(RR^n) f(x) overline(phi_xi (x)) dif x.
 $
 
 Synthesis --- reconstruct from components:
 $
   f(x)
-  = integral_(RR^n) ip(f, phi_xi)_(L^2) phi_xi (x) dif xi
+  = integral_(RR^n) inner(f, phi_xi)_(L^2) phi_xi (x) dif xi
   = integral_(RR^n) hat(f)(xi) phi_xi (x) dif xi.
 $
 
-This is the continuous analogue of $v = sum_i ip(v, e_i) e_i$
+This is the continuous analogue of $v = sum_i inner(v, e_i) e_i$
 with the discrete index $i$ replaced by the continuous parameter $xi in RR^n$.
 Parseval's theorem
 $
   norm(f)_(L^2) = norm(hat(f))_(L^2)
 $
 expresses unitarity of this basis change,
-analogous to $norm(v)^2 = sum_i abs(ip(v, e_i))^2$.
+analogous to $norm(v)^2 = sum_i abs(inner(v, e_i))^2$.
 
 == Derivatives and Convolutions
 
@@ -149,7 +149,7 @@ $
 $
 
 Read the other way, a convolution is a slid inner product.
-Given the $L^2$ inner product $ip(f, g) = integral f(x) g(x) dif x$,
+Given the $L^2$ inner product $inner(f, g) = integral f(x) g(x) dif x$,
 the convolution is the same thing with one function shifted,
 where the shift is the input,
 $

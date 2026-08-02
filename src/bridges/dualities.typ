@@ -11,9 +11,9 @@ Everything below is assembled from four things,
 and keeping them apart is the entire discipline.
 
 / Functional: an element of $X^* = "Hom"(X, RR)$. Free: it needs a module and nothing else.
-/ Duality pairing: the evaluation $ip(dot, dot): X^* times X -> RR$. Free. Two different spaces.
-/ Inner product: a form $ip(dot, dot): X times X -> RR$, one space with itself. Extra structure, implied by nothing above.
-/ Riesz map: the map $R_X: X -> X^*$ that an inner product induces, $v |-> ip(v, dot)$.
+/ Duality pairing: the evaluation $inner(dot, dot): X^* times X -> RR$. Free. Two different spaces.
+/ Inner product: a form $inner(dot, dot): X times X -> RR$, one space with itself. Extra structure, implied by nothing above.
+/ Riesz map: the map $R_X: X -> X^*$ that an inner product induces, $v |-> inner(v, dot)$.
 
 The first two always exist.
 The last two exist only where something supplied an inner product,
@@ -92,7 +92,7 @@ Exactly one exists, and it is the transpose with a Riesz map at each end,
 $
   A^H = R_X^(-1) compose A^* compose R_Y : Y -> X,
 $
-equivalently $ip(A^H y, x) = ip(y, A x)$.
+equivalently $inner(A^H y, x) = inner(y, A x)$.
 This is the adjoint.
 
 The transpose is free and always exists.
@@ -180,7 +180,7 @@ which is what the mass matrix turns out to be.
   columns: (auto, auto), align: (left, left), stroke: none, inset: (x: 0.7em, y: 0.4em),
   [spaces], [$L^2 Lambda^k (M)$ and its dual; discretely the subspace $cal(W)^k$ of Whitney forms and $(cal(W)^k)^*$],
   [pairing], [evaluation of a functional on a form],
-  [structure], [$ip(omega, eta) = integral_M ip(omega, eta)_g "vol"$, built pointwise from the geometric duality and integrated],
+  [structure], [$inner(omega, eta) = integral_M inner(omega, eta)_g "vol"$, built pointwise from the geometric duality and integrated],
   [Riesz map], [$R_(L^2)$; on the discrete subspace it is the mass matrix $M$ in the Whitney basis],
   [transpose], [precomposition with $dif$, which is not $partial$ here, see below; the transposes properly belonging to this duality are those of inclusions, the Galerkin restriction $i^*$ and the multigrid pair in which restriction is the transpose of prolongation, both free and needing no metric],
   [adjoint], [the codifferential $delta = dif^H$, discretely $delta_h = M^(-1) partial M$; the Hodge-Laplacian $dif delta + delta dif$ is self-adjoint here and nowhere else; the $L^2$ projection is the crossing back after a transpose],
@@ -237,7 +237,7 @@ $
 $
 which is dense, and $dif$ is closed on it.
 The adjoint of such an operator carries a domain of its own,
-$cal(D)(dif^*) = { eta : omega |-> ip(dif omega, eta) "is bounded on" cal(D)(dif) }$,
+$cal(D)(dif^*) = { eta : omega |-> inner(dif omega, eta) "is bounded on" cal(D)(dif) }$,
 and $delta$ is $dif^*$ there.
 The domain is part of the operator, not a technicality attached to it,
 and the next subsection is what lives in that domain.
@@ -262,7 +262,7 @@ Adjointness was stated above as if $dif$ and $delta$ simply were adjoint.
 On a manifold with boundary they are not, and what stands between them is one integral.
 Integration by parts, which is Stokes applied to $omega and star eta$, gives
 $
-  ip(dif omega, eta) = ip(omega, delta eta) + integral_(partial M) "tr" omega and "tr" star eta.
+  inner(dif omega, eta) = inner(omega, delta eta) + integral_(partial M) "tr" omega and "tr" star eta.
 $
 So $delta$ is the adjoint of $dif$ only on a domain where that term vanishes,
 and there are two ways to make it vanish, which is why there are two complexes and not one.
@@ -333,13 +333,13 @@ Vertical arrows are Riesz maps: the geometry, once per grade and nowhere else.
 Reading paths:
 
 - Down, then left is $partial M_k$, which returns a functional,
-  with values $(partial M_k u)_j = ip(u, dif lambda_j)$.
+  with values $(partial M_k u)_j = inner(u, dif lambda_j)$.
   This is the object usually written $D^transp M_k$ and usually miscalled a weak codifferential.
   No adjoint was taken, which is why it stays sparse.
 - Down, left, up is $delta_h$, the adjoint, which returns an element and costs a solve.
 
 Two laws follow from the picture rather than from calculation.
-Adjointness $ip(delta_h u, tau) = ip(u, dif tau)$
+Adjointness $inner(delta_h u, tau) = inner(u, dif tau)$
 says the two routes down to a number agree.
 And $delta_h delta_h = 0$ because in $(M^(-1) partial M)(M^(-1) partial M)$
 the middle crossing cancels its own inverse, leaving $partial partial = 0$:
@@ -368,7 +368,7 @@ Read distributionally, $-Delta$ is a map $H^1_0 -> H^(-1)$,
 and it is an isomorphism there, which is what Lax-Milgram says.
 The weak form is not a weakened version of it:
 it is the same map, written as the bilinear form it always was,
-$a(u,v) = ip(dif u, dif v)$.
+$a(u,v) = inner(dif u, dif v)$.
 
 Where, then, does the familiar reading of $-Delta$
 as an operator taking functions to functions come from?
@@ -477,7 +477,7 @@ A preconditioner is a crossing, not an operator.
 That is why applying it and applying the operator go in opposite directions,
 and why building one as an approximate inverse is the natural thing rather than a trick.
 
-A Krylov method's $ip(r, z)$ is the duality pairing.
+A Krylov method's $inner(r, z)$ is the duality pairing.
 The residual is a functional and $z = P r$ is an element,
 so pairing them needs no inner product at all.
 What looks like an inner product inside a conjugate gradient implementation is evaluation,
