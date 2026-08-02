@@ -148,6 +148,21 @@ $
   cal(F)[k * f] = hat(k) hat(f).
 $
 
+Read the other way, a convolution is a slid inner product.
+Given the $L^2$ inner product $ip(f, g) = integral f(x) g(x) dif x$,
+the convolution is the same thing with one function shifted,
+where the shift is the input,
+$
+  (f * g)(t) = integral f(x) g(x - t) dif x,
+$
+so there is a convolution to every inner product.
+Inner products measure similarity of elements of a linear space:
+for vectors in $RR^d$ this is their alignment,
+for functions it is how well they overlap over the whole domain.
+Convolution measures that similarity in a shifted manner,
+and if one of the two functions is spatially confined, a wavelet say,
+the measurement becomes local.
+
 == Other Groups
 
 The same construction applies to any locally compact abelian group:
