@@ -21,6 +21,10 @@
 #include "src/probability/stochastic-calculus.typ"
 #include "src/probability/gaussian-processes.typ"
 
+#include "src/physics/analytical-mechanics.typ"
+#include "src/physics/thermodynamics.typ"
+#include "src/physics/statistical-mechanics.typ"
+#include "src/physics/fluids.typ"
 #include "src/physics/maxwell.typ"
 #include "src/physics/waves.typ"
 #include "src/physics/quantum.typ"
