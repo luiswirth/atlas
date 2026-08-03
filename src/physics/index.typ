@@ -1,11 +1,7 @@
 #import "/src/setup.typ": *
 #show: note
 
-= Physics
-
-// Every note carries its title as a level-one heading, so including one here
-// shifts it under the area.
-#set heading(offset: 1)
+#show: area.with("Physics")
 
 #include "/src/physics/analytical-mechanics.typ"
 #include "/src/physics/thermodynamics.typ"

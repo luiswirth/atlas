@@ -17,3 +17,19 @@
   show: thmrules
   body
 }
+
+// An area document. Every note sets the page so that it compiles alone, and a
+// set page rule issued after content exists starts a new one, so a note begins
+// a page whatever an area does. The area heading is therefore a title page
+// rather than a stray line above the first note.
+//
+// It also shifts the notes one level down, which is what lets a note write its
+// title as = regardless of what it is compiled inside.
+#let area(name, body) = {
+  show heading.where(level: 1): it => page(
+    align(center + horizon, text(size: 25pt, weight: "bold", it.body)),
+  )
+  heading(level: 1, name)
+  set heading(offset: 1)
+  body
+}

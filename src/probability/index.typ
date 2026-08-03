@@ -1,11 +1,7 @@
 #import "/src/setup.typ": *
 #show: note
 
-= Probability
-
-// Every note carries its title as a level-one heading, so including one here
-// shifts it under the area.
-#set heading(offset: 1)
+#show: area.with("Probability")
 
 #include "/src/probability/probability-as-geometry.typ"
 #include "/src/probability/brownian-motion.typ"
