@@ -9,10 +9,13 @@
 // The whole document is drawn in this one, light-theme or dark-theme.
 #let colors = dark-theme
 
+// And set in this one, serif-fonts or sans-fonts.
+#let fonts = sans-fonts
+
 // Applied per note rather than once at the top, since every note is standalone.
 #let note(body) = {
   set document(title: title, author: author)
-  show: document-style.with(colors: colors)
+  show: document-style.with(colors: colors, fonts: fonts)
   show: notes-style
   show: thmrules
   body
