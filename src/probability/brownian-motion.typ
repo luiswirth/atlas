@@ -21,7 +21,7 @@ The three natural sums then separate.
 
 #table(
   columns: 3,
-  [sum], [scaling], [limit],
+  table.header([sum], [scaling], [limit]),
   [$sum Delta B_i$], [cancellation, so $sqrt(N Delta t) = sqrt(t)$], [finite, random],
   [$sum abs(Delta B_i)$], [$N sqrt(Delta t) = t \/ sqrt(Delta t)$], [$infinity$],
   [$sum (Delta B_i)^2$], [$N Delta t = t$], [finite, deterministic],
