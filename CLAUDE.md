@@ -72,6 +72,9 @@ Typst, not LaTeX. Angle brackets are `chevron.l` / `chevron.r`; `angle.l` does n
 Prose is the default and the register is mathematical.
 A note records the framing and the connections, not a textbook development of the subject,
 and it points at other notes rather than restating them.
+A derivation belongs in a note where the derivation is the explanation.
+
+A note is drafted with Luis and never handed to him finished, the framing having to be his.
 
 ## Anti-goals
 
