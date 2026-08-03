@@ -14,6 +14,6 @@ jobs:
   deploy:
     uses: luiswirth/typst-deploy/.github/workflows/typst-deploy.yml@v1
     with:
-      entry_file: src/main.typ
+      entry_file: src/atlas.typ
       output_name: atlas.pdf
       package_path: lib/dottyp/pkg

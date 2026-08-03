@@ -1,8 +1,20 @@
 #!/usr/bin/env sh
 # dottyp is vendored at lib/dottyp, so every checkout resolves @local/dottyp
 # the same way, this one and CI included.
+#
+# The argument names a document below src/, which is either a note or an area,
+# and defaults to the whole atlas:
+#
+#   ./build.sh
+#   ./build.sh probability
+#   ./build.sh probability/brownian-motion
 
 set -e
 export TYPST_PACKAGE_PATH="$PWD/lib/dottyp/pkg"
 mkdir -p out
-typst compile src/main.typ out/atlas.pdf --root "$PWD"
+
+doc=${1:-atlas}
+src="src/$doc.typ"
+[ -f "$src" ] || src="src/$doc/index.typ"
+
+typst compile "$src" "out/$(basename "$doc").pdf" --root "$PWD"

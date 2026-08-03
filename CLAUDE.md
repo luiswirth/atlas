@@ -22,7 +22,13 @@ Every note starts with the two lines
 ```
 
 followed by a single level-one heading carrying its title, and uses `==` and deeper inside.
-It therefore compiles alone and is also included by `src/main.typ`, which must list every note.
+
+Three documents nest, and each of them compiles alone.
+A note is the leaf. `src/<area>/index.typ` lists the notes of its area and nothing else,
+and `src/atlas.typ` lists the six area indices and nothing else.
+Both lists are exhaustive, so a new note is added to its area index and to no other place.
+An index sets `heading(offset: 1)` before including,
+which is why a note writes its title as `=` regardless of what it is compiled inside.
 
 `src/setup.typ` defines no notation.
 It is the one file that imports dottyp, whose `notes` template this repo follows,
@@ -43,14 +49,16 @@ git clone --recurse-submodules git@github.com:luiswirth/atlas.git
 The submodule is pinned to a commit, so picking up a change to the library
 is `git -C lib/dottyp pull` and a commit here.
 
-Build a single document over everything into `out/`:
+`./build.sh` and `./watch.sh` take the name of a document below `src/`,
+which is an area or a single note, and default to the whole atlas:
 
 ```bash
 ./build.sh
+./build.sh probability
+./watch.sh probability/stochastic-calculus
 ```
 
-Every note also compiles on its own,
-given the same package root the scripts export:
+Compiling by hand needs only the package root the scripts export:
 
 ```bash
 export TYPST_PACKAGE_PATH=$PWD/lib/dottyp/pkg
