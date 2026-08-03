@@ -10,7 +10,7 @@
 #let colors = dark-theme
 
 // And set in this one, serif-fonts or sans-fonts.
-#let fonts = sans-fonts
+#let fonts = serif-fonts
 
 // Applied per note rather than once at the top, since every note is standalone.
 #let note(body) = {
