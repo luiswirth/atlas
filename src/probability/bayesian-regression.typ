@@ -1,13 +1,11 @@
 #import "/src/setup.typ": *
 #show: note
 
-= Gaussian Processes
-
-== Bayesian linear regression
+= Bayesian Linear Regression
 
 Start from a basis expansion, where finding the optimal coefficients is least squares.
-Two readings of the same object sit side by side:
-weight space is feature space, and kernel space is function space.
+Weight space is feature space and kernel space is function space,
+two readings of the same object.
 
 Bayesian linear regression is uncertainty quantification for least squares.
 Take regularized least squares,
@@ -19,8 +17,7 @@ and a Gaussian likelihood on the residual.
 The posterior mean over $avec(c)$ is the regularized least squares solution
 with $lambda = sigma^2 \/ sigma_c^2$,
 which is Tikhonov regularization read as the ratio of noise variance to prior variance.
-The marginal likelihood then selects the regularization strength by itself,
-with no hand-tuning of $lambda$.
+The marginal likelihood then selects $lambda$, rather than it being tuned by hand.
 
 Bayesian linear regression with a finite feature map and a Gaussian prior on the weights
 is a Gaussian process with kernel

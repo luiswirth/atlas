@@ -32,11 +32,14 @@ The subgraph of $f: RR^d -> RR^+_0$ is
 $
   op("subgraph")(f) = { (x,y) in RR^d times RR : 0 <= y <= f(x) },
 $
-whose Lebesgue measure is $integral_(RR^d) f dif x$.
+whose Lebesgue measure is
+$
+  integral_(RR^d) f dif x.
+$
 To generate a uniform random variable on it,
 take an arbitrary $X$ and a uniform $U$ and set $Y = (X, f(X) U)$.
-That is the whole trick behind rejection sampling:
-uniformity on the subgraph is the same information as the density.
+Uniformity on the subgraph carries the same information as the density,
+which is what rejection sampling exploits.
 
 == Monte Carlo integration against quadrature
 
@@ -44,7 +47,11 @@ The point of Monte Carlo is to rewrite an integral as an expectation.
 For a measure space with $mu(A) != 0$ and $f in L^1(mu)$,
 build a probability space by normalizing, $PP(B) := mu(B) \/ mu(A)$,
 so that $Y$ is uniform on $A$, and set $X = mu(A) f(Y)$.
-Then $EE[X] = integral_A f dif mu$, and the empirical mean estimates it.
+Then
+$
+  EE[X] = integral_A f dif mu,
+$
+and the empirical mean estimates it.
 
 The deterministic competitor is quadrature,
 and the comparison is entirely about how the error scales with dimension.

@@ -3,67 +3,79 @@
 
 = Brownian Motion
 
-The roughness of Brownian motion is not an extra assumption.
-It follows from independence of the increments alone,
-and everything peculiar about stochastic calculus is downstream of it.
+Centered Gaussian process on $[0,infinity)$ with kernel
+$
+  k(s,t) = min(s,t),
+$
+and continuous paths. Equivalently $B_0 = 0$ with independent increments
+$
+  B_t - B_s tilde cal(N)(0, t-s), quad s < t,
+$
+independence being orthogonality of the indicators, $inner(bb(1)_((s,t]), bb(1)_((u,v])) = 0$
+for disjoint intervals.
 
-== Why the exponent is one half
+Continuity is not implied by the kernel and comes from Kolmogorov continuity applied to
+$
+  EE[abs(B_t - B_s)^(2k)] = c_k abs(t-s)^k,
+$
+which gives a modification with paths in $C^alpha$ for every $alpha < 1/2$.
 
-Independence means that variances add, not standard deviations.
-Splitting $[0,t]$ into $N$ increments gives $"Var"(B_t) = N "Var"(Delta B)$,
-so the typical size, which is the standard deviation, grows like $sqrt(N)$.
-A deterministic quantity, whose pieces all pull in the same direction, would grow like $N$.
-The gap between $1/2$ and $1$ is the entire pathology.
+== Invariances
 
-Counting the pieces of a partition into steps of size $Delta t$,
-there are $N = t \/ Delta t$ of them, each of typical size $abs(Delta B) tilde.op sqrt(Delta t)$.
-The three natural sums then separate.
+#table(
+  columns: 2,
+  table.header([transformation], [statement]),
+  [scaling], [$B_(c t) eqdist sqrt(c) B_t$],
+  [symmetry], [$-B_t eqdist B_t$],
+  [time inversion], [$t B_(1\/t) eqdist B_t$],
+  [shift], [$B_(t+s) - B_s eqdist B_t$, independent of $cal(F)_s$],
+)
+
+Scaling pairs $sqrt(c)$ in space with $c$ in time, so the difference quotient scales like
+$sqrt(c)\/c = 1\/sqrt(c) -> infinity$ and no derivative exists at any point.
+
+== Variation
+
+Variances add, not standard deviations, so $N$ increments of a partition of $[0,t]$ have
+typical size $abs(Delta B) tilde.op sqrt(Delta t)$ with $N = t\/Delta t$.
 
 #table(
   columns: 3,
   table.header([sum], [scaling], [limit]),
-  [$sum Delta B_i$], [cancellation, so $sqrt(N Delta t) = sqrt(t)$], [finite, random],
-  [$sum abs(Delta B_i)$], [$N sqrt(Delta t) = t \/ sqrt(Delta t)$], [$infinity$],
-  [$sum (Delta B_i)^2$], [$N Delta t = t$], [finite, deterministic],
+  [$sum Delta B_i$], [$sqrt(N Delta t) = sqrt(t)$, by cancellation], [finite, random],
+  [$sum abs(Delta B_i)$], [$N sqrt(Delta t) = t\/sqrt(Delta t)$], [$infinity$],
+  [$sum (Delta B_i)^2$], [$N Delta t = t$], [$t$, deterministic],
+  [$sum abs(Delta B_i)^p$, $p > 2$], [$N Delta t^(p\/2) -> 0$], [$0$],
 )
 
-So the path has infinite length and finite quadratic variation $[B]_t = t$,
-and the limit in the last line is not merely in mean:
-a random object becomes a deterministic one.
-The exponent $2$ is the borderline, since any power above it gives $N Delta t^(>1) -> 0$,
-which is why the Taylor expansion along a Brownian path stops at second order
-and why $dif B dif B = dif t$ is the only new rule.
-In $n$ dimensions each coordinate contributes, $[B]_t = n t$ and $dif B^i dif B^j = delta^(i j) dif t$,
-and that per-coordinate accumulation is the $n$ that appears in discretization bounds.
-
-== Why no derivative exists
-
-Differentiability is a statement about zooming in:
-a function is differentiable where magnifying time and space by the same factor straightens the graph.
-Brownian motion is self-similar with the wrong pairing,
 $
-  B_(c t) eq^d sqrt(c) B_t,
+  quadvar(B)_t = t, quad dif B dif B = dif t.
 $
-so seeing the same picture again costs a magnification $sqrt(c)$ in space against $c$ in time.
-The difference quotient therefore scales like $sqrt(c) \/ c = 1 \/ sqrt(c)$, which diverges as $c -> 0$.
-A smooth function has a scale below which it is boring; Brownian motion has none.
+Infinite total variation, so no pathwise Riemann-Stieltjes integral.
+Finite deterministic quadratic variation, so the calculus is repaired in $L^2(Omega)$.
+Exponent $2$ is the borderline, so Taylor expansion along a Brownian path stops at second
+order.
 
-Structurally, a velocity is information that survives across scales,
-since it asserts that the next increment continues the last one,
-and independent increments assert exactly the opposite.
-Continuity with independent stationary increments and the existence of a derivative
-are incompatible demands, and Brownian motion is what remains when the first is kept.
+In $n$ dimensions each coordinate contributes,
+$
+  dif B^i dif B^j = delta^(i j) dif t, quad quadvar(B)_t = n t,
+$
+and that per-coordinate accumulation is the $n$ appearing in discretization bounds.
 
-The scope of the argument is the same as its input.
-It applies to anything driven by white noise and stops as soon as increments are correlated
-over a finite time $tau$, below which the path looks smooth again.
-Physical noise is of that kind, and Brownian motion is its $tau -> 0$ idealization.
+== Martingales
 
-== Why the pathology is useful
+$
+  B_t, quad B_t^2 - t, quad exp(lambda B_t - lambda^2 t \/ 2)
+$
+are martingales for the Brownian filtration. The second compensates the quadratic
+variation, the third generates the moments and gives
+$
+  PP(sup_(s <= t) B_s >= a) = 2 PP(B_t >= a) <= e^(-a^2 \/ (2t)),
+$
+the equality by the reflection principle.
 
-Because $sqrt(Delta t)$ sits above $Delta t$, the noise dominates the drift over a single small step,
-which is why a diffusion explores its neighborhood regardless of where the drift points.
-Because squares accumulate deterministically, the aggregate effect of that same noise is not random:
-it is the second-order term of the generator.
-The exploration is random and its bookkeeping is not,
-and every operator built on the process is the deterministic residue of that cancellation.
+== Consequences
+
+Over one step the noise $sqrt(Delta t)$ dominates the drift $Delta t$, so a diffusion
+explores its neighborhood regardless of the drift. Squares accumulate deterministically,
+so the aggregate noise contributes the second-order term of the generator.

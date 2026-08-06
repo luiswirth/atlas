@@ -1,7 +1,7 @@
 #import "/src/setup.typ": *
 #show: note
 
-= Probability is Hilbert Geometry
+= Probability as Hilbert Geometry
 
 Random variables are vectors over the index set $Omega$, with inner product $EE[X Y]$,
 so the measure is the weight and therefore the metric.
