@@ -1,8 +1,6 @@
 #import "/src/setup.typ": *
 #show: note
 
-#show: area.with("Geometry")
-
 #include "/src/geometry/topology.typ"
 #include "/src/geometry/manifolds.typ"
 #include "/src/geometry/exterior-algebra.typ"

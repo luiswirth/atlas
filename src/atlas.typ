@@ -5,9 +5,10 @@
 
 #outline(depth: 2)
 
-#include "/src/analysis/index.typ"
-#include "/src/geometry/index.typ"
-#include "/src/probability/index.typ"
-#include "/src/physics/index.typ"
-#include "/src/numerics/index.typ"
-#include "/src/bridges/index.typ"
+#area("Analysis", include "/src/analysis/index.typ")
+#area("Geometry", include "/src/geometry/index.typ")
+#area("Probability", include "/src/probability/index.typ")
+#area("Stochastic Calculus", include "/src/stochastic-calculus/index.typ")
+#area("Physics", include "/src/physics/index.typ")
+#area("Numerics", include "/src/numerics/index.typ")
+#area("Bridges", include "/src/bridges/index.typ")
