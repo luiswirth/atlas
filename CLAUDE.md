@@ -25,9 +25,10 @@ followed by a single level-one heading carrying its title, and uses `==` and dee
 
 Three documents nest, and each of them compiles alone.
 A note is the leaf. `src/<area>/index.typ` lists the notes of its area and nothing else,
-and `src/atlas.typ` lists the six area indices and nothing else.
+and `src/atlas.typ` lists the seven area indices and nothing else,
+naming each area at the point of inclusion.
 Both lists are exhaustive, so a new note is added to its area index and to no other place.
-An index sets `heading(offset: 1)` before including,
+The heading offset comes from the enclosing document,
 which is why a note writes its title as `=` regardless of what it is compiled inside.
 
 `src/setup.typ` defines no notation.
