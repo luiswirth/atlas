@@ -49,6 +49,8 @@ git clone --recurse-submodules git@github.com:luiswirth/atlas.git
 
 The submodule is pinned to a commit, so picking up a change to the library
 is `git -C lib/dottyp pull` and a commit here.
+The vendored copy is never edited: a change to the library is written in its own
+checkout, and its `CLAUDE.md` carries the Typst conventions a note is written to.
 
 `./build.sh` and `./watch.sh` take the name of a document below `src/`,
 which is an area or a single note, and default to the whole atlas:
