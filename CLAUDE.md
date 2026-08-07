@@ -70,8 +70,6 @@ typst compile --root . src/probability/stochastic-calculus.typ
 
 ## Conventions
 
-Typst, not LaTeX. Angle brackets are `chevron.l` / `chevron.r`; `angle.l` does not exist.
-
 Prose is the default and the register is mathematical.
 A note records the framing and the connections, not a textbook development of the subject,
 and it points at other notes rather than restating them.
